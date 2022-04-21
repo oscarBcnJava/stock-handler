@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "24c70ba3-4e16-4e0f-a6c6-9bde0fe55caf",
+		"name": "StockHandler",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Inventory",
+			"item": [
+				{
+					"name": "Get Inventory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/inventories",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"inventories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Inventory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"inventory\": [\n    {\n      \"art_id\": \"1\",\n      \"name\": \"leg\",\n      \"stock\": \"12\"\n    },\n    {\n      \"art_id\": \"2\",\n      \"name\": \"screw\",\n      \"stock\": \"17\"\n    },\n    {\n      \"art_id\": \"3\",\n      \"name\": \"seat\",\n      \"stock\": \"2\"\n    },\n    {\n      \"art_id\": \"4\",\n      \"name\": \"table top\",\n      \"stock\": \"1\"\n    }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/inventories",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"inventories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Import from file",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/inventories/readfile",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"inventories",
+								"readfile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Get Stock",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/stock",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"products\": [\n    {\n      \"name\": \"Dining Chair\",\n      \"contain_articles\": [\n        {\n          \"art_id\": \"1\",\n          \"amount_of\": \"4\"\n        },\n        {\n          \"art_id\": \"2\",\n          \"amount_of\": \"8\"\n        },\n        {\n          \"art_id\": \"3\",\n          \"amount_of\": \"1\"\n        }\n      ]\n    },\n    {\n      \"name\": \"Dinning Table\",\n      \"contain_articles\": [\n        {\n          \"art_id\": \"1\",\n          \"amount_of\": \"4\"\n        },\n        {\n          \"art_id\": \"2\",\n          \"amount_of\": \"8\"\n        },\n        {\n          \"art_id\": \"4\",\n          \"amount_of\": \"1\"\n        }\n      ]\n    }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sell Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dining Chair\",\n    \"quantity\": \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/sell",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sell"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Import from file",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/products/readfile",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"readfile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
